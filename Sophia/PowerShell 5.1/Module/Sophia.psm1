@@ -83,7 +83,7 @@ function Checkings
 		Write-Warning -Message $Localization.UnsupportedISE
 		exit
 	}
-
+<# skip updates
 	# Checking if the current module version is the latest one
 	try
 	{
@@ -107,7 +107,7 @@ function Checkings
 		Write-Warning -Message $Localization.NoInternetConnection
 		Write-Error -Message $Localization.NoInternetConnection -ErrorAction SilentlyContinue
 	}
-
+ #>
 	# Unblock all files in the folder by removing the Zone.Identifier alternate data stream with a value of "3"
 	Get-ChildItem -Path $PSScriptRoot -Recurse -Force | Unblock-File
 
